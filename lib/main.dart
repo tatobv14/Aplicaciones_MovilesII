@@ -24,8 +24,48 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /*
+    ===================================================================
+    ======================== DESCRIPCIÓN DEL RETO =====================
+    ===================================================================
+
+    OBJETIVO: Implementar una navegación sencilla hacia una nueva
+              pantalla de "Ayuda" (HelpPage) utilizando Rutas Anónimas
+              (MaterialPageRoute).
+
+    PASOS A SEGUIR:
+    1.  [RETO 1/3] Crea la clase 'HelpPage' al final de este archivo.
+        (Mira la sección marcada con // [RETO] PASO 3)
+
+    2.  [RETO 2/3] En esta pantalla (HomePage), dentro del AppBar,
+        agrega un 'actions' y un 'IconButton'.
+
+    3.  [RETO 3/3] Dentro de la función onPressed() del IconButton,
+        implementa la navegación hacia la HelpPage con:
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HelpPage(),
+              ),
+            );
+
+    */
     return Scaffold(
       appBar: AppBar(
+        // [RETO] PASO 2: Coloca aquí el código del actions y el IconButton.
+        // Ejemplo de estructura (¡debes completarla!):
+        /*
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.help_outline, color: Colors.black, size: 30),
+            onPressed: () {
+              // [RETO] PASO 3: Llama a Navigator.push aquí.
+              //
+            },
+          ),
+        ],
+        */
+        
         title: Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
@@ -81,7 +121,6 @@ class HomePage extends StatelessWidget {
                   label: const Text('Ir a Pantalla Detalle'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 220, 175, 92),
-
                     foregroundColor: const Color.fromARGB(255, 0, 0, 0),
                     padding: const EdgeInsets.symmetric(
                       horizontal: 20,
@@ -210,3 +249,43 @@ class DetailPage extends StatelessWidget {
     );
   }
 }
+
+// =================================================================
+// [RETO] PASO 1: Define aquí la clase 'HelpPage'. Debe ser un StatelessWidget.
+// No necesita recibir argumentos en su constructor.
+//
+// Puedes usar esta plantilla y rellenar los contenidos (Scaffold, AppBar, etc.):
+/*
+class HelpPage extends StatelessWidget {
+  const HelpPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Pantalla de Ayuda'),
+        backgroundColor: Colors.blueGrey,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Información de Soporte',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Función para volver a la pantalla anterior
+                // (Pista: Navigator.pop)
+              },
+              child: const Text('Volver'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+*/
